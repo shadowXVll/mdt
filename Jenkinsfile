@@ -14,7 +14,7 @@ pipeline{
     // }
     stage('Sonar') {
             steps {
-                withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'sonarqube-server') {
+                withSonarQubeEnv(installationName: 'sonarqube-external', credentialsId: 'sonarqube-server') {
                     script {
                         sonarHome = tool 'sonarscanner4'
                         sh """

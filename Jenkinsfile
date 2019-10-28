@@ -58,7 +58,7 @@ pipeline{
         script { 
           sh """
             cd ${WORKSPACE}/www
-            tar --exclude='./css' --exclude='./js' -c -z -f ../site-archive-${params.RELEASE}-${params.RELEASE_VER}-${BUILD_NUMBER}.tgz ."""
+            tar --exclude='./css' --exclude='./js' -c -z -f ../site-archive-vladriabets.tgz ."""
           nexusArtifactUploader artifacts: [[artifactId: 'site-archive-vladriabets', \
                                             classifier: '', file: 'site-archive-vladriabets.tgz', \
                                             type: 'tgz']], \

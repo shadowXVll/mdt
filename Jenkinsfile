@@ -59,6 +59,16 @@ pipeline{
           sh """
             cd ${WORKSPACE}/www
             tar --exclude='./css' --exclude='./js' -c -z -f ../site-archive-${params.RELEASE}-${params.RELEASE_VER}-${BUILD_NUMBER}.tgz ."""
+          nexusArtifactUploader artifacts: [[artifactId: 'site-archive-vladriabets', \
+                                            classifier: '', file: 'site-archive-vladriabets.tgz', \
+                                            type: 'tgz']], \
+                                            credentialsId: 'jenkins-demo-student5-vasyl-kryvous', \
+                                            groupId: 'site-archive', \
+                                            nexusUrl: 'master.jenkins-practice.tk:9443', \
+                                            nexusVersion: 'nexus2', \
+                                            protocol: 'https', \
+                                            repository: 'raw-demo-hosted', \
+                                            version: '${RELEASE_VER}-${BUILD_NUMBER}' 
         }
       }
     }        

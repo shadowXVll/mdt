@@ -65,7 +65,7 @@ pipeline{
                                             credentialsId: 'nexus-vriabets', \
                                             groupId: 'site-archive', \
                                             nexusUrl: 'master.jenkins-practice.tk:9443', \
-                                            nexusVersion: 'nexus2', \
+                                            nexusVersion: 'nexus3', \
                                             protocol: 'https', \
                                             repository: 'raw-demo-hosted', \
                                             version: '${RELEASE_VER}-${BUILD_NUMBER}' 

@@ -62,7 +62,7 @@ pipeline{
           nexusArtifactUploader artifacts: [[artifactId: 'site-archive-vladriabets', \
                                             classifier: '', file: 'site-archive-vladriabets.tgz', \
                                             type: 'tgz']], \
-                                            credentialsId: 'jenkins-demo-student5-vasyl-kryvous', \
+                                            credentialsId: 'nexus-vriabets', \
                                             groupId: 'site-archive', \
                                             nexusUrl: 'master.jenkins-practice.tk:9443', \
                                             nexusVersion: 'nexus2', \
@@ -72,15 +72,15 @@ pipeline{
         }
       }
     }        
-    stage('Archive when') {
-      when {
-        expression {
-          params.RELEASE == 'RELEASE' 
-        }
-      }
-      steps {
-        archive '*.tgz'
-      }
-    }
+    // stage('Archive when') {
+    //   when {
+    //     expression {
+    //       params.RELEASE == 'RELEASE' 
+    //     }
+    //   }
+    //   steps {
+    //     archive '*.tgz'
+    //   }
+    // }
   }
 }
